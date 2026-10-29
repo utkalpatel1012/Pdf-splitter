@@ -1,0 +1,6 @@
+{
+  "name": "ChapterSplit",
+  "description": "Intelligent PDF chapter splitter that automatically indexes and segregates large documents into chapter-wise PDFs, with page previews and ZIP export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
