@@ -77,6 +77,31 @@
      gradle assembleDebug
      ```
 
+## 🔄 Automated CI/CD (GitHub Actions)
+
+This repository includes a pre-configured **GitHub Actions** CI/CD pipeline (`.github/workflows/build.yml`) that builds the app automatically every time you push:
+
+- **Automatic Trigger**: Triggers automatically on every `push` or `pull_request` to `main` / `master` (and can also be triggered manually from the "Actions" tab).
+- **Automated Tasks**:
+  1. Sets up JDK 17 and caches Gradle dependencies.
+  2. Restores keystore credentials and configures environment secrets.
+  3. Builds the Android APK (`./gradlew assembleDebug`).
+  4. Runs unit tests to ensure stability.
+  5. Publishes the compiled APK as a downloadable GitHub artifact (`ChapterSplit-debug-apk`).
+
+### 📦 How to Download the Built APK from GitHub
+1. Navigate to your repository on GitHub.
+2. Click the **Actions** tab at the top.
+3. Click on the latest workflow run (e.g., `Build Android App`).
+4. Scroll down to the **Artifacts** section at the bottom of the page.
+5. Click **`ChapterSplit-debug-apk`** to download the ready-to-install Android APK!
+
+### 🔑 Setting up your Gemini API Key in GitHub (Optional)
+To have GitHub Actions build with your custom Gemini API key:
+1. Go to your GitHub repository **Settings** > **Secrets and variables** > **Actions**.
+2. Click **New repository secret**.
+3. Name: `GEMINI_API_KEY`, Value: your API key from Google AI Studio.
+
 ---
 
 ## 📄 License
